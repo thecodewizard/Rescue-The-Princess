@@ -10,3 +10,4 @@ C:\Users\Esteban Denis\Dropbox\Programma's\C#\Rescue The Princess\Rescue The Pri
 C:\Users\Esteban Denis\Dropbox\Programma's\C#\Rescue The Princess\Rescue The Princess\obj\Debug\Rescue The Princess.csproj.GenerateResource.Cache
 C:\Users\Esteban Denis\Dropbox\Programma's\C#\Rescue The Princess\Rescue The Princess\obj\Debug\Rescue The Princess.exe
 C:\Users\Esteban Denis\Dropbox\Programma's\C#\Rescue The Princess\Rescue The Princess\obj\Debug\Rescue The Princess.pdb
+C:\Users\Esteban Denis\Dropbox\Programma's\C#\Rescue The Princess\Rescue The Princess\obj\Debug\Rescue The Princess.csprojResolveAssemblyReference.cache
