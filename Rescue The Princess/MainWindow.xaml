@@ -1,0 +1,148 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Rescue_The_Princess.MainWindow"
+        Title="Rescue The Princes" Height="350" Width="525" Foreground="#FFE85E00" Loaded="Window_Loaded" ShowInTaskbar="False" WindowState="Maximized" KeyDown="key_pressed" MinWidth="720" MinHeight="480">
+    <Window.Background>
+        <ImageBrush ImageSource="background.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="367*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="26*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="grdIntro" Margin="0,0,0,0.5" Grid.RowSpan="5" Grid.ColumnSpan="3" d:IsHidden="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnStartRound1Easy" Content="Let's go easy on that princes, aight?" Margin="0,5" Grid.Row="4" Background="#FF707070" Foreground="#FFE85E00" BorderBrush="#FFE85E00" Click="btnStartRound1Easy_Click"/>
+            <Button x:Name="btnStartRound1Medium" Content="I'll save her. Give me a challenge." Margin="0,5" Grid.Row="4" Background="#FF707070" Foreground="#FFE85E00" BorderBrush="#FFE85E00" Grid.Column="1" Click="btnStartRound1Medium_Click" />
+            <Button x:Name="btnStartRound1Hard" Content="I'm suicidal. Hit me real good." Margin="0,5" Grid.Row="4" Background="#FF707070" Foreground="#FFE85E00" BorderBrush="#FFE85E00" Grid.Column="2" Grid.ColumnSpan="8" Click="btnStartRound1Hard_Click" />
+            <Label x:Name="lblIntroTitle" Margin="186,4.5,187,0" Grid.Row="3" Foreground="#FFE85E00" Content="SAVE THE PRINCES" FontSize="36" FontWeight="Bold" FontFamily="Ubuntu" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        </Grid>
+        <Grid x:Name="grdOne" d:IsHidden="True" Margin="0,0,0,0.5" Grid.RowSpan="5" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Canvas x:Name="cnvEnemy" Margin="0,0,0,0.5" Grid.RowSpan="6"/>
+            <Button x:Name="btnRound1Start" Content="Start Mission" Margin="0,5" Grid.Row="4" Background="#FF707070" Foreground="#FFE85E00" BorderBrush="#FFE85E00" Click="Button_Click"/>
+            <Label x:Name="lblRound1Title" Margin="0,5" Grid.Row="1" Foreground="#FFE85E00" Content="YOUR MISSION PART 1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold" FontFamily="Ubuntu"/>
+            <Label x:Name="lblRound1Descr" Content="Save The Princes By Clicking The Enemy" Margin="0,5" Foreground="#FFE85E00" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontFamily="Ubuntu"/>
+        </Grid>
+        <Grid x:Name="grdTwo" Margin="0,0,0,0.5" Grid.RowSpan="5" Grid.ColumnSpan="3" d:IsHidden="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblRound2Title" Content="YOUR MISSION PART 2" Margin="0,5,5,5" Grid.Row="1" Foreground="#FFE85E00" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontFamily="Ubuntu" FontWeight="Bold"/>
+            <Button x:Name="btnRound2Start" Content="Start Mission" Margin="0,5,5,5" Grid.Row="4" Foreground="#FFE85E00" Background="#FF707070" BorderBrush="#FFE85E00" Click="btnRound2Start_Click"/>
+            <Label x:Name="lblRound2Discr" Content="" Margin="0,4.5,5,0" Grid.Row="2" Foreground="#FFE85E00" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontFamily="Ubuntu" Height="77"/>
+            <Grid x:Name="grdGame" Grid.RowSpan="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="321*"/>
+                    <ColumnDefinition Width="114*"/>
+                    <ColumnDefinition Width="85*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="32*"/>
+                    <RowDefinition Height="71*"/>
+                    <RowDefinition Height="68*"/>
+                    <RowDefinition Height="119*"/>
+                </Grid.RowDefinitions>
+                <Ellipse x:Name="elli" Grid.Row="3" Stroke="#FFE85E00" Grid.Column="1" Visibility="Hidden">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <StackPanel x:Name="spnlword"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
+                <TextBlock x:Name="txbwordcorrect" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Ubuntu" FontSize="14" FontWeight="Bold" Visibility="Hidden"/>
+                <Canvas x:Name="cnvTyper" Height="63" Grid.ColumnSpan="3" Margin="0,65,0,10.194" Grid.Row="2" Grid.RowSpan="2" Visibility="Hidden"/>
+                <ProgressBar x:Name="pgb" Height="30" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,1" Visibility="Hidden"/>
+                <Label x:Name="lblIntroDescr" Content="" Margin="352,0,79.5,0" Foreground="#FFE85E00" Grid.Row="1" FontSize="20" FontFamily="Ubuntu" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="grdThree" Margin="0,0,0,0.5" Grid.RowSpan="5" Grid.ColumnSpan="3" d:IsHidden="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblPart3Title" Margin="0,5" Grid.Row="1" Foreground="#FFE85E00" Content="YOUR MISSION PART 3" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold" FontFamily="Ubuntu"/>
+            <Label x:Name="lblPart3Descr" Content="" Margin="0,5" Foreground="#FFE85E00" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontFamily="Ubuntu"/>
+            <Button x:Name="btnPart3Start" Content="Start Mission" Margin="0,5" Grid.Row="4" Background="#FF707070" Foreground="#FFE85E00" BorderBrush="#FFE85E00" Click="btnPart3Start_Click"/>
+            <Canvas x:Name="cnvEggThrower" Margin="0,0,0,0.5" Grid.RowSpan="6"/>
+        </Grid>
+        <Grid x:Name="grdCompleted" Margin="0,0,0,0.5" Grid.RowSpan="5" Grid.ColumnSpan="3" d:IsHidden="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnfinish" Content="Return To Home" Margin="0,5" Foreground="#FFE85E00" Background="#FF707070" BorderBrush="#FFE85E00" Grid.Row="5" Click="btnfinish_Click"/>
+            <Label x:Name="lblFinish" Content="CONGRATULATIONS" Margin="0,5" Foreground="#FFE85E00" FontSize="36" FontFamily="Ubuntu" FontWeight="Bold" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label x:Name="lblFinishDescr" Content="" Margin="0,5" Foreground="#FFE85E00" FontSize="20" FontFamily="Ubuntu" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <Label.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.6"/>
+                </Label.Background>
+            </Label>
+        </Grid>
+        <Grid x:Name="grdHome" Margin="0,0,0,0.5" Grid.RowSpan="5" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="29*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnStartGame" Content="Start The Game" Click="btnStartGame_Click" Grid.Row="1" Padding="5" Margin="0,15" Grid.ColumnSpan="3" Background="#FF707070" Foreground="#FFE85E00" BorderBrush="#FFE85E00"/>
+            <Button x:Name="btnShutdown_app" Content="Shutdown" Click="btnShutdown_app_Click" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" Foreground="#FFE85E00" Background="#FF707070" BorderBrush="#FFE85E00"/>
+            <Label x:Name="lblHome" Content="THE NMCT GAME" Margin="10,10,10,100" Foreground="#FFE85E00" FontSize="36" FontFamily="Ubuntu" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        </Grid>
+        <Button x:Name="btnSound" Content="Sound" Grid.Column="2" Height="34" Width="53" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,0,0" Foreground="#FFE85E00" Click="Button_Click_1">
+            <Button.Background>
+                <SolidColorBrush Color="Lime" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
