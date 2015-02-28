@@ -11,8 +11,6 @@ aula major
 obeetje
 angelina
 audi
-snelle babes
-comma seperated value
 nvidia
 intel
 processor
@@ -33,13 +31,12 @@ wpf application
 chrome is beter
 moederbord
 integer
+ie suckt
 boolean
 double
 nullreferenceexception
-cascading style sheets
 command line interface
 ipconfig
 tracert
 dir
 sudo su
-sudo make me a sandwitch

@@ -313,7 +313,7 @@ namespace Rescue_The_Princess
             if(this.XLocation <=  dimention / 6)
             {
                 MessageBox.Show("Too bad, the enemy kidnapped the princes. Better luck next time.", "game over", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                Application.Current.Shutdown();
+                if(Application.Current != null) Application.Current.Shutdown();
             }
         }
 

@@ -23,6 +23,7 @@ namespace Rescue_The_Princess
     public partial class MainWindow : Window
     {
         private bool DEVELOPINGMODE = false;
+        private bool OLDGAME = true;
 
         #region declarations
 
@@ -31,7 +32,7 @@ namespace Rescue_The_Princess
         protected String[] _hist = new String[0];
             //Variabelen
         public String _datafolder = AppDomain.CurrentDomain.BaseDirectory;
-        protected String _princes = "/princes.jpg";
+        protected String _princes = "/princess.jpg";
         protected String _enemy_round_1 = "/enemy1.jpg";
         protected String _enemy_round_2 = "/enemy2.jpg";
         protected String _enemy_round_3 = "/enemy3.jpg";
@@ -88,7 +89,7 @@ namespace Rescue_The_Princess
                 _enemyspeed = 20;        //Speed in milliseconds (improve costs lag) -s30
 
                 //Ronde 2
-                _numberwords = 10;       //#enemies to defeat    -s12
+                _numberwords = 8;       //#enemies to defeat    -s12
                 _typeSpeed = 1500;         //Speed in milliseconds (improve costs lag) -s1000
                 _maxtypetime = 5;       //%down in total typetime per tick  -s10
 
@@ -105,7 +106,7 @@ namespace Rescue_The_Princess
                 _enemyspeed = 25;        //Speed in milliseconds (improve costs lag) -s30
 
                 //Ronde 2
-                _numberwords = 12;       //#enemies to defeat    -s12
+                _numberwords = 10;       //#enemies to defeat    -s12
                 _typeSpeed = 1100;         //Speed in milliseconds (improve costs lag) -s1000
                 _maxtypetime = 10;       //%down in total typetime per tick  -s10
 
@@ -121,7 +122,7 @@ namespace Rescue_The_Princess
                 _enemyspeed = 35;        //Speed in milliseconds (improve costs lag) -s30
 
                 //Ronde 2
-                _numberwords = 15;       //#enemies to defeat    -s12
+                _numberwords = 13;       //#enemies to defeat    -s12
                 _typeSpeed = 800;         //Speed in milliseconds (improve costs lag) -s1000
                 _maxtypetime = 10;       //%down in total typetime per tick  -s10
 
@@ -135,6 +136,15 @@ namespace Rescue_The_Princess
                 _numbereggs = 4;
                 _numberenemies = 2;
                 _numberwords = 1;
+            }
+
+            if (OLDGAME == true)
+            {
+                _enemy_round_1 = "/OLD_enemy1.jpg";
+                _enemy_round_2 = "/OLD_enemy2.jpg";
+                _enemy_round_3 = "/OLD_enemy3.jpg";
+                _princes = "/OLD_princess.jpg";
+                _projectiles = "/OLD_projectile.png";
             }
         }
 
@@ -573,7 +583,7 @@ namespace Rescue_The_Princess
         {
             if(pgb.Value <= 0)
             {
-                MessageBox.Show("The enemy has defeated you and the princess was raped by the evil typewizard. Try better next time", "Game Over", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("The enemy has defeated you and the princess was kidnapped by the evil typewizard. Try better next time", "Game Over", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 ShowHome();
             }
         }

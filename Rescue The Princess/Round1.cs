@@ -276,7 +276,7 @@ namespace Rescue_The_Princess
                 if ((this.YLocation > (yloc - dimention) + errormargin) && (this.YLocation < (yloc + (dimention/2*3)) - errormargin))
                 {
                    MessageBox.Show("Too bad, the enemy kidnapped the princes. Better luck next time.", "game over", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                   Application.Current.Shutdown();
+                   if (Application.Current != null) Application.Current.Shutdown();
                    System.Threading.Thread.Sleep(1000);
                 }
             }
